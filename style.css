@@ -1,29 +1,365 @@
-header {
-    background-color: #183C63;
-    color: #FFFFFF;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 16px;
+/* =========================
+   VARIÁVEIS - TEMA MC PAIVA
+   ========================= */
+
+   :root {
+    --cor-primaria: #ff1744;
+    --cor-secundaria: #b000ff;
+    --cor-fundo: #0d0d0d;
+    --cor-card: #181818;
+    --cor-texto: #ffffff;
+    --cor-texto-secundario: #dddddd;
+    --cor-fonte: #aaaaaa;
+    --cor-botao: #1a1a1a;
+
+    --fonte-texto: Arial, Helvetica, sans-serif;
 }
+
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: var(--fonte-texto);
+
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+
+    transition:
+        background-color 0.4s ease,
+        color 0.3s ease;
+}
+
+
+/* =========================
+   TEMA ESCURO
+   ========================= */
+
+body.tema-escuro {
+    --cor-primaria: #ff1744;
+    --cor-secundaria: #c000ff;
+    --cor-fundo: #050505;
+    --cor-card: #111111;
+    --cor-texto: #ffffff;
+    --cor-texto-secundario: #cccccc;
+    --cor-fonte: #999999;
+    --cor-botao: #181818;
+
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+
+/* =========================
+   CABEÇALHO
+   ========================= */
+
+header {
+    width: 100%;
+
+    margin: 0 auto;
+    padding: 40px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #050505 0%,
+            #65000c 50%,
+            #7b00a8 100%
+        );
+
+    color: #ffffff;
+
+    border-bottom: 4px solid var(--cor-primaria);
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.6);
+}
+
+header h1 {
+    margin: 0 0 12px;
+
+    font-size: 40px;
+    font-weight: 900;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 5px #ff1744,
+        0 0 15px #ff1744,
+        0 0 25px rgba(176, 0, 255, 0.7);
+}
+
+header p {
+    margin: 0;
+
+    font-size: 18px;
+    color: #eeeeee;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   CONTEÚDO PRINCIPAL
+   ========================= */
 
 main {
-    background-color: #39dacc;
-    color: #183C63;
-    max-width: 800px;
+    width: 100%;
+    max-width: 1200px;
+
     margin: 0 auto;
-    padding: 16px;
+    padding: 35px 25px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: stretch;
+
+    gap: 25px;
+
+    background-color: var(--cor-fundo);
 }
+
+
+/* =========================
+   CARDS DOS POSTS
+   ========================= */
 
 article {
+    width: 100%;
+    max-width: 520px;
+
     display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 18px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1b1b1b,
+            #0d0d0d
+        );
+
+    border: 1px solid #333333;
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.7),
+        0 0 10px rgba(255, 23, 68, 0.15);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-img {
-    width: 80px;
-    height: 80px;
+article:hover {
+    transform: translateY(-7px);
+
+    border-color: var(--cor-primaria);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(255, 23, 68, 0.4);
+}
+
+
+/* =========================
+   IMAGENS
+   ========================= */
+
+article img {
+    width: 180px;
+    height: 180px;
+
+    object-fit: cover;
+
+    border: 3px solid var(--cor-primaria);
+    border-radius: 14px;
+
+    box-shadow:
+        0 0 12px rgba(255, 23, 68, 0.5),
+        0 0 22px rgba(176, 0, 255, 0.3);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+article img:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 18px rgba(255, 23, 68, 0.7),
+        0 0 30px rgba(176, 0, 255, 0.4);
+}
+
+
+/* =========================
+   TÍTULOS
+   ========================= */
+
+article h2 {
+    margin: 5px 0 10px;
+
+    color: var(--cor-primaria);
+
+    font-size: 25px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 8px rgba(255, 23, 68, 0.4);
+}
+
+
+/* =========================
+   TEXTOS
+   ========================= */
+
+article p {
+    margin: 10px 0;
+
+    color: var(--cor-texto-secundario);
+
+    font-size: 16px;
+
+    line-height: 1.7;
 }
 
 .artigo-autor {
+    color: var(--cor-secundaria) !important;
+
     font-weight: bold;
+
+    font-size: 14px !important;
 }
+
+.artigo-fonte {
+    margin-top: 20px;
+
+    color: var(--cor-fonte) !important;
+
+    font-size: 14px !important;
+}
+
+
+/* =========================
+   LINKS
+   ========================= */
+
+a {
+    color: var(--cor-primaria);
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease;
+}
+
+a:hover {
+    color: var(--cor-secundaria);
+
+    text-decoration: underline;
+}
+
+
+/* =========================
+   BOTÕES DE CURTIDA
+   ========================= */
+
+.botoes {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 10px;
+}
+
+article button {
+    border: 1px solid #444444;
+
+    background-color: var(--cor-botao);
+
+    color: #ffffff;
+
+    padding: 9px 16px;
+
+    margin: 4px;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.3s ease;
+}
+
+article button:hover {
+    background-color: var(--cor-primaria);
+
+    border-color: var(--cor-primaria);
+
+    transform: scale(1.06);
+
+    box-shadow:
+        0 0 12px rgba(255, 23, 68, 0.5);
+}
+
+
+/* BOTÃO CURTIDO */
+
+article button.curtido {
+    background-color: var(--cor-primaria);
+
+    color: #ffffff;
+
+    border-color: var(--cor-primaria);
+
+    box-shadow:
+        0 0 15px rgba(255, 23, 68, 0.7);
+
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   BOTÃO DE T
